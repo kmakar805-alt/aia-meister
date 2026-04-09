@@ -1,16 +1,205 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { Link } from "react-router-dom";
+import { Clock, MapPin, Wrench, Scissors, TreePine, Leaf, Trash2, ArrowRight, CheckCircle, Star, Send, Phone } from "lucide-react";
+import Layout from "@/components/layout/Layout";
+import SectionHeading from "@/components/shared/SectionHeading";
+import CTASection from "@/components/shared/CTASection";
+import heroImg from "@/assets/hero-garden.jpg";
+import ba1 from "@/assets/before-after-1.jpg";
+import ba2 from "@/assets/before-after-2.jpg";
+import ba3 from "@/assets/before-after-3.jpg";
 
-// IMPORTANT: Fully REPLACE this with your own code
-const PlaceholderIndex = () => {
-  // PLACEHOLDER: Replace this entire return statement with the user's app.
-  // The inline background color is intentionally not part of the design system.
+const trustBadges = [
+  { icon: Clock, text: "Vastus samal päeval" },
+  { icon: MapPin, text: "Tallinn ja Harjumaa" },
+  { icon: Wrench, text: "Professionaalsed tööriistad" },
+];
+
+const services = [
+  { icon: TreePine, name: "Võsalõikus", desc: "Eemaldame võsa kiirelt ja korralikult. Sobib kruntidele, teedele ja piirialadele.", href: "/vosaloikus" },
+  { icon: Scissors, name: "Heki lõikamine", desc: "Anname hekile korraliku vormi ja hoiame seda ilusat aastaringselt.", href: "/heki-loikus" },
+  { icon: Leaf, name: "Põõsaste hooldus", desc: "Kujundame ja hooldame ilupõõsaid professionaalselt.", href: "/teenused" },
+  { icon: TreePine, name: "Viljapuude lõikamine", desc: "Professionaalne viljapuude lõikus parema saagi ja tervema puu jaoks.", href: "/viljapuude-loikus" },
+  { icon: Trash2, name: "Krundi puhastus", desc: "Puhastame kinnistu võsast, prügist ja liigsest taimestikust.", href: "/krundi-puhastus" },
+  { icon: Trash2, name: "Okste äravedu", desc: "Viime kõik oksad ja haljastusjäätmed ära — tööala jääb puhas.", href: "/teenused" },
+];
+
+const benefits = [
+  { title: "Kiire reageerimine", desc: "Vastame päringutele samal päeval ja lepime kiirelt aja kokku." },
+  { title: "Aus hinnastamine", desc: "Hindame iga objekti individuaalselt ja anname ausa hinna." },
+  { title: "Korralik tulemus", desc: "Kasutame professionaalseid tööriistu ja tagame kvaliteetse tulemuse." },
+  { title: "Tööala koristus", desc: "Pärast tööd koristame ala puhtaks ja viime jäätmed ära." },
+  { title: "Eramajad ja ühistud", desc: "Teenindame nii eramaju, korteriühistuid kui ka ärikinnisvara." },
+  { title: "Kogemusega meeskond", desc: "Meie meeskonnal on aastatepikkune kogemus haljastustöödega." },
+];
+
+const steps = [
+  { num: "01", title: "Saada kirjeldus või fotod", desc: "Kirjelda oma vajadust ja saada pildid tööobjektist." },
+  { num: "02", title: "Saad kiire hinnangu", desc: "Anname sulle kiire ja ausa hinnapakkumise." },
+  { num: "03", title: "Lepime aja kokku", desc: "Valime sulle sobiva aja ja kinnitame tellimuse." },
+  { num: "04", title: "Teeme töö ära", desc: "Tulemme kohale, teeme töö ära ja koristame tööala puhtaks." },
+];
+
+const testimonials = [
+  { name: "Maris K.", location: "Tallinn, Nõmme", text: "Väga professionaalne teenus! Hekk sai ilusaks ja kogu tööala oli pärast puhas. Soovitan soojalt!" },
+  { name: "Andres T.", location: "Viimsi", text: "Kiire reageerimine ja aus hind. Võsa sai eemaldatud ühe päevaga. Kindlasti kasutan uuesti." },
+  { name: "Kati L.", location: "Harku vald", text: "Tellisime krundi puhastuse ja viljapuude lõikuse. Meeskond oli kohal õigel ajal ja tulemus oli suurepärane." },
+];
+
+const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
-    </div>
+    <Layout>
+      {/* Hero */}
+      <section className="relative overflow-hidden bg-primary">
+        <div className="absolute inset-0">
+          <img src={heroImg} alt="Aiahooldus" width={1920} height={1080} className="w-full h-full object-cover opacity-20" />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/95 to-primary/70" />
+        </div>
+        <div className="relative container py-20 md:py-28 lg:py-36">
+          <div className="max-w-2xl">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-primary-foreground leading-tight text-balance">
+              Aiahooldus ja võsalõikus Tallinnas ning Harjumaal
+            </h1>
+            <p className="mt-5 text-base md:text-lg text-primary-foreground/80 leading-relaxed max-w-xl">
+              Lõikame hekid, eemaldame võsa, puhastame krundid ja jätame tööala puhtaks.
+            </p>
+            <div className="mt-8 flex flex-col sm:flex-row gap-3">
+              <Link
+                to="/kontaktid"
+                className="inline-flex items-center justify-center px-7 py-3.5 rounded-xl bg-accent text-accent-foreground font-semibold hover:bg-accent-hover transition-colors shadow-md text-base"
+              >
+                Küsi pakkumist
+              </Link>
+              <Link
+                to="/teenused"
+                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl border-2 border-primary-foreground/30 text-primary-foreground font-semibold hover:bg-primary-foreground/10 transition-colors text-base"
+              >
+                Vaata teenuseid
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+            <div className="mt-10 flex flex-wrap gap-4 md:gap-6">
+              {trustBadges.map((badge) => (
+                <div key={badge.text} className="flex items-center gap-2 text-sm text-primary-foreground/80">
+                  <div className="w-8 h-8 rounded-lg bg-primary-foreground/10 flex items-center justify-center">
+                    <badge.icon className="w-4 h-4 text-accent" />
+                  </div>
+                  <span>{badge.text}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services */}
+      <section className="section-padding">
+        <div className="container">
+          <SectionHeading title="Meie teenused" subtitle="Pakume laia valiku aiahooldus- ja haljastusteenuseid nii eramajadele kui ärikinnisvarale." />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {services.map((s) => (
+              <Link
+                key={s.name}
+                to={s.href}
+                className="group bg-card rounded-2xl p-6 border border-border shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1"
+              >
+                <div className="w-12 h-12 rounded-xl bg-primary-light flex items-center justify-center mb-4 group-hover:bg-primary transition-colors">
+                  <s.icon className="w-5 h-5 text-primary group-hover:text-primary-foreground transition-colors" />
+                </div>
+                <h3 className="text-lg font-semibold text-foreground mb-2">{s.name}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
+                <span className="inline-flex items-center gap-1 mt-4 text-sm font-medium text-primary group-hover:gap-2 transition-all">
+                  Vaata lähemalt <ArrowRight className="w-3.5 h-3.5" />
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Why choose us */}
+      <section className="section-padding bg-section-alt">
+        <div className="container">
+          <SectionHeading title="Miks valida meid?" subtitle="Meie eesmärk on pakkuda parimat kogemust – algusest lõpuni." />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {benefits.map((b) => (
+              <div key={b.title} className="flex items-start gap-3 bg-card rounded-xl p-5 border border-border">
+                <CheckCircle className="w-5 h-5 text-accent mt-0.5 shrink-0" />
+                <div>
+                  <h3 className="font-semibold text-foreground mb-1">{b.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{b.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* How it works */}
+      <section className="section-padding">
+        <div className="container">
+          <SectionHeading title="Kuidas see käib?" subtitle="Neli lihtsat sammu korraliku tulemuseni." />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {steps.map((step, i) => (
+              <div key={step.num} className="relative text-center">
+                <div className="text-5xl font-extrabold text-primary/10 mb-3">{step.num}</div>
+                <h3 className="text-base font-semibold text-foreground mb-2">{step.title}</h3>
+                <p className="text-sm text-muted-foreground">{step.desc}</p>
+                {i < steps.length - 1 && (
+                  <div className="hidden lg:block absolute top-8 -right-3 w-6">
+                    <ArrowRight className="w-5 h-5 text-border" />
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Before/After gallery */}
+      <section className="section-padding bg-section-alt">
+        <div className="container">
+          <SectionHeading title="Enne ja pärast" subtitle="Vaata, millist vahet meie töö teeb." />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            {[ba1, ba2, ba3].map((img, i) => (
+              <div key={i} className="rounded-2xl overflow-hidden shadow-card">
+                <img src={img} alt={`Enne ja pärast ${i + 1}`} loading="lazy" width={1280} height={720} className="w-full h-56 object-cover" />
+              </div>
+            ))}
+          </div>
+          <div className="text-center mt-8">
+            <Link to="/meie-kliendid" className="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all">
+              Vaata kõiki projekte <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="section-padding">
+        <div className="container">
+          <SectionHeading title="Mida ütlevad meie kliendid?" />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            {testimonials.map((t) => (
+              <div key={t.name} className="bg-card rounded-2xl p-6 border border-border shadow-card">
+                <div className="flex gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-4 h-4 fill-accent text-accent" />
+                  ))}
+                </div>
+                <p className="text-sm text-muted-foreground leading-relaxed mb-4">"{t.text}"</p>
+                <div>
+                  <p className="font-semibold text-sm text-foreground">{t.name}</p>
+                  <p className="text-xs text-muted-foreground">{t.location}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <CTASection />
+    </Layout>
   );
 };
-
-const Index = PlaceholderIndex;
 
 export default Index;
