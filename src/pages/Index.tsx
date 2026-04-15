@@ -1,48 +1,46 @@
 import { Link } from "react-router-dom";
-import { Clock, MapPin, Wrench, Scissors, TreePine, Leaf, Trash2, ArrowRight, CheckCircle, Star, Send, Phone } from "lucide-react";
+import { Clock, MapPin, Shield, Leaf, Snowflake, SprayCan, Wrench, ArrowRight, CheckCircle, Star, Phone } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import SectionHeading from "@/components/shared/SectionHeading";
 import CTASection from "@/components/shared/CTASection";
-import heroImg from "@/assets/hero-garden.jpg";
-import ba1 from "@/assets/before-after-1.jpg";
-import ba2 from "@/assets/before-after-2.jpg";
-import ba3 from "@/assets/before-after-3.jpg";
+import heroImg from "@/assets/hero-property.jpg";
+import ba1 from "@/assets/ba-property-1.jpg";
+import ba2 from "@/assets/ba-property-2.jpg";
+import ba3 from "@/assets/ba-property-3.jpg";
 
 const trustBadges = [
   { icon: Clock, text: "Vastus samal päeval" },
   { icon: MapPin, text: "Tallinn ja Harjumaa" },
-  { icon: Wrench, text: "Professionaalsed tööriistad" },
+  { icon: Shield, text: "Kvaliteetne ja usaldusväärne" },
 ];
 
-const services = [
-  { icon: TreePine, name: "Võsalõikus", desc: "Eemaldame võsa kiirelt ja korralikult. Sobib kruntidele, teedele ja piirialadele.", href: "/vosaloikus" },
-  { icon: Scissors, name: "Heki lõikamine", desc: "Anname hekile korraliku vormi ja hoiame seda ilusat aastaringselt.", href: "/heki-loikus" },
-  { icon: Leaf, name: "Põõsaste hooldus", desc: "Kujundame ja hooldame ilupõõsaid professionaalselt.", href: "/teenused" },
-  { icon: TreePine, name: "Viljapuude lõikamine", desc: "Professionaalne viljapuude lõikus parema saagi ja tervema puu jaoks.", href: "/viljapuude-loikus" },
-  { icon: Trash2, name: "Krundi puhastus", desc: "Puhastame kinnistu võsast, prügist ja liigsest taimestikust.", href: "/krundi-puhastus" },
-  { icon: Trash2, name: "Okste äravedu", desc: "Viime kõik oksad ja haljastusjäätmed ära — tööala jääb puhas.", href: "/teenused" },
+const serviceCategories = [
+  { icon: Leaf, name: "Haljastus ja õuetööd", desc: "Muru niitmine, hekkide lõikus, lehtede riisumine ja hooajaline aiahooldus.", href: "/teenused" },
+  { icon: Snowflake, name: "Talveteenused", desc: "Lumelükkamine, libedusetõrje ja katustelt lume eemaldamine.", href: "/teenused" },
+  { icon: SprayCan, name: "Koristusteenused", desc: "Kodu-, kontori- ja trepikodade koristus ning ehitusjärgne puhastus.", href: "/teenused" },
+  { icon: Wrench, name: "Lisateenused", desc: "Survepesu, väiksemad remondi- ja hooldustööd.", href: "/teenused" },
 ];
 
 const benefits = [
-  { title: "Kiire reageerimine", desc: "Vastame päringutele samal päeval ja lepime kiirelt aja kokku." },
-  { title: "Aus hinnastamine", desc: "Hindame iga objekti individuaalselt ja anname ausa hinna." },
-  { title: "Korralik tulemus", desc: "Kasutame professionaalseid tööriistu ja tagame kvaliteetse tulemuse." },
-  { title: "Tööala koristus", desc: "Pärast tööd koristame ala puhtaks ja viime jäätmed ära." },
-  { title: "Eramajad ja ühistud", desc: "Teenindame nii eramaju, korteriühistuid kui ka ärikinnisvara." },
-  { title: "Kogemusega meeskond", desc: "Meie meeskonnal on aastatepikkune kogemus haljastustöödega." },
+  { title: "Kiire reageerimine", desc: "Vastame päringutele samal päeval ja lepime aja kiirelt kokku." },
+  { title: "Aus hinnastamine", desc: "Hindame igat tööd individuaalselt ja anname ausa hinna." },
+  { title: "Kvaliteetne tulemus", desc: "Kasutame professionaalseid tööriistu ja tagame parima tulemuse." },
+  { title: "Tööala koristus", desc: "Pärast tööd jätame ala puhtaks ja korras." },
+  { title: "Lai teenuste valik", desc: "Haljastusest koristuseni — kõik ühest kohast." },
+  { title: "Kogemusega meeskond", desc: "Meie meeskonnal on aastatepikkune kogemus haldustöödega." },
 ];
 
 const steps = [
-  { num: "01", title: "Saada kirjeldus või fotod", desc: "Kirjelda oma vajadust ja saada pildid tööobjektist." },
-  { num: "02", title: "Saad kiire hinnangu", desc: "Anname sulle kiire ja ausa hinnapakkumise." },
+  { num: "01", title: "Kirjelda vajadust", desc: "Saada meile oma soov ja võimalusel fotod objektist." },
+  { num: "02", title: "Saad hinnangu", desc: "Anname kiire ja ausa hinnapakkumise." },
   { num: "03", title: "Lepime aja kokku", desc: "Valime sulle sobiva aja ja kinnitame tellimuse." },
-  { num: "04", title: "Teeme töö ära", desc: "Tulemme kohale, teeme töö ära ja koristame tööala puhtaks." },
+  { num: "04", title: "Teeme töö ära", desc: "Tuleme kohale, teeme töö ja koristame tööala puhtaks." },
 ];
 
 const testimonials = [
-  { name: "Maris K.", location: "Tallinn, Nõmme", text: "Väga professionaalne teenus! Hekk sai ilusaks ja kogu tööala oli pärast puhas. Soovitan soojalt!" },
-  { name: "Andres T.", location: "Viimsi", text: "Kiire reageerimine ja aus hind. Võsa sai eemaldatud ühe päevaga. Kindlasti kasutan uuesti." },
-  { name: "Kati L.", location: "Harku vald", text: "Tellisime krundi puhastuse ja viljapuude lõikuse. Meeskond oli kohal õigel ajal ja tulemus oli suurepärane." },
+  { name: "Maris K.", location: "Tallinn, Nõmme", text: "Väga professionaalne teenus! Hoov sai ilusaks ja kõik jäi puhtaks. Soovitan soojalt!" },
+  { name: "Andres T.", location: "Viimsi", text: "Kiire reageerimine ja aus hind. Trepikoja koristus on alati korralik. Kasutan jätkuvalt." },
+  { name: "Kati L.", location: "Harku vald", text: "Tellisime muru niitmise ja survepesu. Meeskond oli kohal õigel ajal ja tulemus suurepärane." },
 ];
 
 const Index = () => {
@@ -51,20 +49,20 @@ const Index = () => {
       {/* Hero */}
       <section className="relative overflow-hidden bg-primary">
         <div className="absolute inset-0">
-          <img src={heroImg} alt="Aiahooldus" width={1920} height={1080} className="w-full h-full object-cover opacity-20" />
+          <img src={heroImg} alt="Kinnisvara haldus" width={1920} height={1080} className="w-full h-full object-cover opacity-20" />
           <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/95 to-primary/70" />
         </div>
         <div className="relative container py-20 md:py-28 lg:py-36">
           <div className="max-w-2xl">
             <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-primary-foreground leading-tight text-balance">
-              Aiahooldus ja võsalõikus Tallinnas ning Harjumaal
+              Usaldusväärne haldus- ja koristusteenus
             </h1>
             <p className="mt-5 text-base md:text-lg text-primary-foreground/80 leading-relaxed max-w-xl">
-              Lõikame hekid, eemaldame võsa, puhastame krundid ja jätame tööala puhtaks.
+              Hooldame teie kinnisvara, hoiame hoovi korras ja tagame puhtuse — aasta ringi, professionaalselt.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-3">
               <Link
-                to="/kontaktid"
+                to="/kontakt"
                 className="inline-flex items-center justify-center px-7 py-3.5 rounded-xl bg-accent text-accent-foreground font-semibold hover:bg-accent-hover transition-colors shadow-md text-base"
               >
                 Küsi pakkumist
@@ -91,12 +89,12 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Services */}
+      {/* Service categories */}
       <section className="section-padding">
         <div className="container">
-          <SectionHeading title="Meie teenused" subtitle="Pakume laia valiku aiahooldus- ja haljastusteenuseid nii eramajadele kui ärikinnisvarale." />
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {services.map((s) => (
+          <SectionHeading title="Meie teenused" subtitle="Pakume laia valiku haldus-, hooldus- ja koristusteenuseid nii eramajadele kui ärikinnisvarale." />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {serviceCategories.map((s) => (
               <Link
                 key={s.name}
                 to={s.href}
@@ -119,7 +117,7 @@ const Index = () => {
       {/* Why choose us */}
       <section className="section-padding bg-section-alt">
         <div className="container">
-          <SectionHeading title="Miks valida meid?" subtitle="Meie eesmärk on pakkuda parimat kogemust – algusest lõpuni." />
+          <SectionHeading title="Miks valida meid?" subtitle="Meie eesmärk on pakkuda parimat kogemust — algusest lõpuni." />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {benefits.map((b) => (
               <div key={b.title} className="flex items-start gap-3 bg-card rounded-xl p-5 border border-border">
@@ -155,7 +153,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Before/After gallery */}
+      {/* Gallery preview */}
       <section className="section-padding bg-section-alt">
         <div className="container">
           <SectionHeading title="Enne ja pärast" subtitle="Vaata, millist vahet meie töö teeb." />
@@ -167,7 +165,7 @@ const Index = () => {
             ))}
           </div>
           <div className="text-center mt-8">
-            <Link to="/meie-kliendid" className="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all">
+            <Link to="/galerii" className="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all">
               Vaata kõiki projekte <ArrowRight className="w-4 h-4" />
             </Link>
           </div>

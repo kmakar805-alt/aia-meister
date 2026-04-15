@@ -16,23 +16,22 @@ const Contact = () => {
       <PageHero
         title="Võta ühendust"
         subtitle="Kirjelda oma vajadust ja saadame sulle kiire hinnapakkumise."
-        breadcrumbs={[{ name: "Avaleht", href: "/" }, { name: "Kontaktid" }]}
+        breadcrumbs={[{ name: "Avaleht", href: "/" }, { name: "Kontakt" }]}
       />
 
       <section className="section-padding">
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
-            {/* Contact info */}
             <div className="lg:col-span-2 space-y-5">
               {[
                 { icon: Phone, title: "Telefon", value: "+372 555 1234", href: "tel:+3725551234" },
-                { icon: Mail, title: "E-post", value: "info@aiameister24.ee", href: "mailto:info@aiameister24.ee" },
+                { icon: Mail, title: "E-post", value: "info@haldusproff.ee", href: "mailto:info@haldusproff.ee" },
                 { icon: MapPin, title: "Teeninduspiirkond", value: "Tallinn ja Harjumaa" },
                 { icon: Clock, title: "Tööaeg", value: "E–R 8:00–18:00, L 9:00–15:00" },
               ].map((item) => (
                 <div key={item.title} className="bg-card rounded-xl p-5 border border-border flex items-start gap-4">
                   <div className="w-10 h-10 rounded-lg bg-primary-light flex items-center justify-center shrink-0">
-                    <item.icon className="w-4.5 h-4.5 text-primary" />
+                    <item.icon className="w-4 h-4 text-primary" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-sm text-foreground">{item.title}</h3>
@@ -56,7 +55,6 @@ const Contact = () => {
               </a>
             </div>
 
-            {/* Form */}
             <div className="lg:col-span-3">
               <form onSubmit={handleSubmit} className="bg-card rounded-2xl p-7 md:p-8 border border-border shadow-section">
                 <h2 className="text-xl font-bold text-foreground mb-6">Küsi pakkumist</h2>
@@ -95,13 +93,13 @@ const Contact = () => {
                   />
                 </div>
                 <div className="mb-4">
-                  <label className="block text-sm font-medium text-foreground mb-1.5">Kirjeldus</label>
+                  <label className="block text-sm font-medium text-foreground mb-1.5">Sõnum</label>
                   <textarea
                     value={form.message}
                     onChange={(e) => setForm({ ...form, message: e.target.value })}
                     rows={4}
                     className="w-full px-4 py-2.5 rounded-lg border border-input bg-background text-foreground text-sm focus:ring-2 focus:ring-ring focus:outline-none resize-none"
-                    placeholder="Kirjelda oma tööobjekti — mis tööd on vaja teha, kui suur on ala jne."
+                    placeholder="Kirjelda oma vajadust — mis tööd on vaja teha, kui suur on ala jne."
                     required
                   />
                 </div>
@@ -124,7 +122,6 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Map placeholder */}
       <section className="pb-0">
         <div className="w-full h-64 md:h-80 bg-muted flex items-center justify-center">
           <p className="text-muted-foreground text-sm">Kaardi kohatäide – Tallinn ja Harjumaa</p>

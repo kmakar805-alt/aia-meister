@@ -1,23 +1,25 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Info } from "lucide-react";
+import { Info } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import PageHero from "@/components/shared/PageHero";
 import CTASection from "@/components/shared/CTASection";
 
 const factors = [
-  { title: "Heki pikkus", desc: "Mida pikem hekk, seda rohkem tööd ja aega kulub." },
-  { title: "Kõrgus", desc: "Kõrge hekk nõuab lisavarustust ja rohkem tööaega." },
-  { title: "Võsa tihedus", desc: "Paks ja vana võsa on aeganõudvam kui hõre taimestik." },
-  { title: "Ligipääs", desc: "Raskesti ligipääsetav ala võib mõjutada hinda." },
-  { title: "Jäätmete äravedu", desc: "Okste ja haljastusjäätmete äravedu lisandub hinnale." },
-  { title: "Ala suurus", desc: "Suuremate kruntide puhul pakume soodsamat hinda." },
+  { title: "Ala suurus", desc: "Mida suurem objekt, seda rohkem aega ja tööd kulub." },
+  { title: "Töö keerukus", desc: "Raskesti ligipääsetavad alad või keerulised pinnad mõjutavad hinda." },
+  { title: "Regulaarsus", desc: "Püsiklientidele pakume soodsamaid kuutasusid." },
+  { title: "Jäätmete käitlus", desc: "Prahi, okste ja lehtede äravedu lisandub hinnale." },
+  { title: "Hooaeg", desc: "Talvised ja kiirtellimused võivad mõjutada hinda." },
+  { title: "Lisateenused", desc: "Mitme teenuse kombineerimine võib anda soodsama paketi." },
 ];
 
 const examples = [
-  { title: "Heki lõikus", range: "alates 3 €/m", note: "Sõltub kõrgusest ja tihedusest" },
-  { title: "Võsalõikus", range: "alates 80 €", note: "Väike ala, kerge võsa" },
-  { title: "Krundi puhastus", range: "alates 150 €", note: "Keskmine krunt" },
-  { title: "Okste äravedu", range: "alates 50 €", note: "Sõltub kogusest ja kaugusest" },
+  { title: "Muru niitmine", range: "alates 40 €", note: "Väike eramaja krunt" },
+  { title: "Hekkide lõikus", range: "alates 3 €/m", note: "Sõltub kõrgusest ja tihedusest" },
+  { title: "Trepikoja koristus", range: "alates 60 €/kuu", note: "Regulaarne kuuhooldus" },
+  { title: "Lumelükkamine", range: "alates 50 €", note: "Ühe korra hind, sõltub alast" },
+  { title: "Survepesu", range: "alates 4 €/m²", note: "Terrassid ja kivipinnad" },
+  { title: "Kodu koristus", range: "alates 15 €/h", note: "Tunnitasu, min 2 tundi" },
 ];
 
 const Pricing = () => {
@@ -29,7 +31,6 @@ const Pricing = () => {
         breadcrumbs={[{ name: "Avaleht", href: "/" }, { name: "Hinnad" }]}
       />
 
-      {/* Notice */}
       <section className="py-10">
         <div className="container container-narrow">
           <div className="bg-primary-light rounded-2xl p-6 flex items-start gap-3">
@@ -37,14 +38,13 @@ const Pricing = () => {
             <div>
               <h3 className="font-semibold text-foreground mb-1">Individuaalne hindamine</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Kuna iga objekt on erinev, ei paku me fikseeritud hinnakirja. Allpool olevad näidishinnad on orienteeruvad ja võivad sõltuda konkreetsetest tingimustest. Küsi alati personaalset pakkumist!
+                Kuna iga objekt on erinev, ei paku me fikseeritud hinnakirja. Allpool olevad hinnad on orienteeruvad ja sõltuvad konkreetsetest tingimustest. Küsi alati personaalset pakkumist!
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Factors */}
       <section className="section-padding bg-section-alt">
         <div className="container">
           <h2 className="text-2xl md:text-3xl font-bold text-foreground text-center mb-10">Hinda mõjutavad tegurid</h2>
@@ -59,12 +59,11 @@ const Pricing = () => {
         </div>
       </section>
 
-      {/* Example prices */}
       <section className="section-padding">
         <div className="container container-narrow">
           <h2 className="text-2xl md:text-3xl font-bold text-foreground text-center mb-4">Orienteeruvad näidishinnad</h2>
           <p className="text-center text-muted-foreground mb-10">Need hinnad on näitlikud ja võivad varieeruda.</p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {examples.map((e) => (
               <div key={e.title} className="bg-card rounded-2xl p-6 border border-border shadow-card text-center">
                 <h3 className="font-semibold text-foreground mb-1">{e.title}</h3>

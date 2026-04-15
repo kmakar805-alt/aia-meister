@@ -6,20 +6,18 @@ const Footer = () => {
     <footer className="bg-primary text-primary-foreground">
       <div className="container section-padding">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
-          {/* Brand */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-2 mb-4">
               <div className="w-8 h-8 rounded-lg bg-accent flex items-center justify-center">
-                <span className="text-accent-foreground font-bold text-sm">A</span>
+                <span className="text-accent-foreground font-bold text-sm">H</span>
               </div>
-              <span className="font-bold text-lg tracking-tight">AIAMEISTER24</span>
+              <span className="font-bold text-lg tracking-tight">HALDUSPROFF</span>
             </div>
             <p className="text-sm opacity-80 leading-relaxed">
-              Professionaalne aiahooldus ja haljastustööd Tallinnas ning Harjumaal. Kiire, korralik ja aus teenus.
+              Professionaalne kinnisvara haldus, aiahooldus ja koristusteenused Tallinnas ning Harjumaal.
             </p>
           </div>
 
-          {/* Quick Links */}
           <div>
             <h4 className="font-semibold text-sm uppercase tracking-wider mb-4 opacity-70">Lehekülg</h4>
             <ul className="space-y-2.5">
@@ -27,9 +25,8 @@ const Footer = () => {
                 { name: "Avaleht", href: "/" },
                 { name: "Teenused", href: "/teenused" },
                 { name: "Hinnad", href: "/hinnad" },
-                { name: "Meie kliendid", href: "/meie-kliendid" },
-                { name: "Blogi", href: "/blogi" },
-                { name: "Kontaktid", href: "/kontaktid" },
+                { name: "Galerii", href: "/galerii" },
+                { name: "Kontakt", href: "/kontakt" },
               ].map((link) => (
                 <li key={link.href}>
                   <Link to={link.href} className="text-sm opacity-80 hover:opacity-100 transition-opacity">
@@ -40,26 +37,19 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Services */}
           <div>
             <h4 className="font-semibold text-sm uppercase tracking-wider mb-4 opacity-70">Teenused</h4>
             <ul className="space-y-2.5">
-              {[
-                { name: "Võsalõikus", href: "/vosaloikus" },
-                { name: "Heki lõikamine", href: "/heki-loikus" },
-                { name: "Viljapuude lõikamine", href: "/viljapuude-loikus" },
-                { name: "Krundi puhastus", href: "/krundi-puhastus" },
-              ].map((link) => (
-                <li key={link.href}>
-                  <Link to={link.href} className="text-sm opacity-80 hover:opacity-100 transition-opacity">
-                    {link.name}
+              {["Muru niitmine", "Hekkide lõikus", "Koristusteenused", "Lumelükkamine", "Survepesu", "Hooldustööd"].map((s) => (
+                <li key={s}>
+                  <Link to="/teenused" className="text-sm opacity-80 hover:opacity-100 transition-opacity">
+                    {s}
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Contact */}
           <div>
             <h4 className="font-semibold text-sm uppercase tracking-wider mb-4 opacity-70">Kontakt</h4>
             <ul className="space-y-3">
@@ -69,7 +59,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-2.5 text-sm opacity-80">
                 <Mail className="w-4 h-4 shrink-0" />
-                <a href="mailto:info@aiameister24.ee" className="hover:opacity-100 transition-opacity">info@aiameister24.ee</a>
+                <a href="mailto:info@haldusproff.ee" className="hover:opacity-100 transition-opacity">info@haldusproff.ee</a>
               </li>
               <li className="flex items-start gap-2.5 text-sm opacity-80">
                 <MapPin className="w-4 h-4 shrink-0 mt-0.5" />
@@ -80,8 +70,8 @@ const Footer = () => {
         </div>
 
         <div className="mt-12 pt-8 border-t border-primary-foreground/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm opacity-60">
-          <p>© {new Date().getFullYear()} Aiameister24. Kõik õigused kaitstud.</p>
-          <p>Aiahooldus ja haljastustööd</p>
+          <p>© {new Date().getFullYear()} Haldusproff. Kõik õigused kaitstud.</p>
+          <p>Haldus- ja koristusteenused</p>
         </div>
       </div>
     </footer>
