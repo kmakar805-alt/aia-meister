@@ -7,8 +7,8 @@ interface CTASectionProps {
 }
 
 const CTASection = ({
-  title = "Vajad abi heki või võsaga?",
-  subtitle = "Võta meiega ühendust ja saad kiire hinnangu oma tööle. Vastame samal päeval!",
+  title = "Vajad usaldusväärset halduspartnerit?",
+  subtitle = "Võta meiega ühendust ja saad kiire hinnapakkumise. Vastame samal päeval!",
 }: CTASectionProps) => (
   <section className="bg-primary section-padding">
     <div className="container text-center">
@@ -20,7 +20,7 @@ const CTASection = ({
       </p>
       <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
         <Link
-          to="/kontaktid"
+          to="/kontakt"
           className="inline-flex items-center px-7 py-3.5 rounded-xl bg-accent text-accent-foreground font-semibold hover:bg-accent-hover transition-colors shadow-md"
         >
           Küsi pakkumist

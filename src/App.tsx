@@ -5,17 +5,12 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import Index from "./pages/Index.tsx";
-import Services from "./pages/Services.tsx";
-import BrushCuttingService from "./pages/BrushCuttingService.tsx";
-import HedgeTrimming from "./pages/HedgeTrimming.tsx";
-import FruitTreePruning from "./pages/FruitTreePruning.tsx";
-import LandClearing from "./pages/LandClearing.tsx";
-import Pricing from "./pages/Pricing.tsx";
-import Clients from "./pages/Clients.tsx";
-import Blog from "./pages/Blog.tsx";
-import Contact from "./pages/Contact.tsx";
-import NotFound from "./pages/NotFound.tsx";
+import Index from "./pages/Index";
+import Services from "./pages/Services";
+import Pricing from "./pages/Pricing";
+import Gallery from "./pages/Gallery";
+import Contact from "./pages/Contact";
+import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
@@ -37,14 +32,9 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/teenused" element={<Services />} />
-          <Route path="/vosaloikus" element={<BrushCuttingService />} />
-          <Route path="/heki-loikus" element={<HedgeTrimming />} />
-          <Route path="/viljapuude-loikus" element={<FruitTreePruning />} />
-          <Route path="/krundi-puhastus" element={<LandClearing />} />
           <Route path="/hinnad" element={<Pricing />} />
-          <Route path="/meie-kliendid" element={<Clients />} />
-          <Route path="/blogi" element={<Blog />} />
-          <Route path="/kontaktid" element={<Contact />} />
+          <Route path="/galerii" element={<Gallery />} />
+          <Route path="/kontakt" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
