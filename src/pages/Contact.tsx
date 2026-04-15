@@ -122,11 +122,6 @@ const Contact = () => {
         </div>
       </section>
 
-      <section className="pb-0">
-        <div className="w-full h-64 md:h-80 bg-muted flex items-center justify-center">
-          <p className="text-muted-foreground text-sm">Kaardi kohatäide – Tallinn ja Harjumaa</p>
-        </div>
-      </section>
     </Layout>
   );
 };
