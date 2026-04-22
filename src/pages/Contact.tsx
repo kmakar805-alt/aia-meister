@@ -2,13 +2,30 @@ import { useState } from "react";
 import { Phone, Mail, MapPin, Clock, MessageCircle, Send } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import PageHero from "@/components/shared/PageHero";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "sonner";
 
 const Contact = () => {
   const [form, setForm] = useState({ name: "", phone: "", email: "", message: "" });
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    alert("Täname! Võtame teiega peagi ühendust.");
+    setLoading(true);
+    try {
+      const { data, error } = await supabase.functions.invoke("send-contact-email", {
+        body: form,
+      });
+      if (error) throw error;
+      if (data?.error) throw new Error(data.error);
+      toast.success("Täname! Võtame teiega peagi ühendust.");
+      setForm({ name: "", phone: "", email: "", message: "" });
+    } catch (err) {
+      console.error(err);
+      toast.error("Päringu saatmine ebaõnnestus. Palun proovi uuesti või helista.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -111,10 +128,11 @@ const Contact = () => {
                 </div>
                 <button
                   type="submit"
-                  className="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl bg-accent text-accent-foreground font-semibold hover:bg-accent-hover transition-colors shadow-md"
+                  disabled={loading}
+                  className="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl bg-accent text-accent-foreground font-semibold hover:bg-accent-hover transition-colors shadow-md disabled:opacity-60 disabled:cursor-not-allowed"
                 >
                   <Send className="w-4 h-4" />
-                  Saada päring
+                  {loading ? "Saadan..." : "Saada päring"}
                 </button>
               </form>
             </div>
