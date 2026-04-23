@@ -110,9 +110,9 @@ const Index = () => {
                   loading="lazy"
                   width={800}
                   height={600}
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="absolute inset-0 w-full h-full object-cover blur-[2px] scale-105 transition-transform duration-500 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/95 via-primary-dark/70 to-primary-dark/10" />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/95 via-primary-dark/85 to-primary-dark/60" />
                 <div className="relative p-6 text-primary-foreground">
                   <div className="w-10 h-10 rounded-xl bg-primary-foreground/15 backdrop-blur-sm flex items-center justify-center mb-3">
                     <s.icon className="w-5 h-5 text-primary-foreground" />
