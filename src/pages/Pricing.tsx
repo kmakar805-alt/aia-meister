@@ -47,28 +47,31 @@ const Pricing = () => {
       </section>
 
       <section className="py-6 md:py-8 bg-section-alt">
-        <div className="container container-narrow">
-          <PriceCalculator />
-        </div>
-      </section>
-
-      <section className="section-padding">
         <div className="container">
-          <h2 className="text-2xl md:text-3xl font-bold text-foreground text-center mb-10">Hinda mõjutavad tegurid</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {factors.map((f) => (
-              <div key={f.title} className="bg-card rounded-xl p-5 border border-border">
-                <h3 className="font-semibold text-foreground mb-1.5">{f.title}</h3>
-                <p className="text-sm text-muted-foreground">{f.desc}</p>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div className="lg:col-span-2">
+              <PriceCalculator />
+            </div>
+            <aside className="lg:col-span-1">
+              <div className="bg-card rounded-2xl border border-border shadow-card p-6 lg:sticky lg:top-24">
+                <h2 className="text-xl font-bold text-foreground mb-4">Hinda mõjutavad tegurid</h2>
+                <ul className="space-y-4">
+                  {factors.map((f) => (
+                    <li key={f.title}>
+                      <h3 className="font-semibold text-sm text-foreground mb-1">{f.title}</h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed">{f.desc}</p>
+                    </li>
+                  ))}
+                </ul>
               </div>
-            ))}
+            </aside>
           </div>
         </div>
       </section>
 
-      <section className="section-padding bg-section-alt">
+      <section className="py-8 md:py-12">
         <div id="paringu-vorm" className="container container-narrow scroll-mt-24">
-          <div className="text-center mb-8">
+          <div className="text-center mb-6">
             <p className="text-sm font-semibold uppercase tracking-wider text-accent mb-2">Küsi hinnapakkumist</p>
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground text-balance">
               Vajad usaldusväärset halduspartnerit?
