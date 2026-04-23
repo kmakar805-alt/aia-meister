@@ -56,7 +56,7 @@ const Index = () => {
           <img src={heroImg} alt="Kinnisvara haldus" width={1920} height={1080} className="w-full h-full object-cover opacity-20" />
           <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/95 to-primary/70" />
         </div>
-        <div className="relative container py-14 md:py-20 lg:py-24">
+        <div className="relative container py-8 md:py-10 lg:py-12">
           <div className="max-w-2xl">
             <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-primary-foreground leading-tight text-balance">
               Usaldusväärne haldus- ja koristusteenus
