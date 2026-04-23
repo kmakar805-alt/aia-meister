@@ -1,8 +1,8 @@
-import { Link } from "react-router-dom";
 import { Info } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import PageHero from "@/components/shared/PageHero";
-import CTASection from "@/components/shared/CTASection";
+import InlineContactForm from "@/components/shared/InlineContactForm";
+import PriceCalculator from "@/components/shared/PriceCalculator";
 
 const factors = [
   { title: "Ala suurus", desc: "Mida suurem objekt, seda rohkem aega ja tööd kulub." },
@@ -75,7 +75,27 @@ const Pricing = () => {
         </div>
       </section>
 
-      <CTASection title="Soovid täpset hinnapakkumist?" subtitle="Saada meile oma objekti kirjeldus ja pildid — vastame samal päeval!" />
+      <section className="section-padding bg-section-alt">
+        <div className="container container-narrow">
+          <PriceCalculator />
+        </div>
+      </section>
+
+      <section className="section-padding">
+        <div className="container container-narrow">
+          <div className="text-center mb-8">
+            <p className="text-sm font-semibold uppercase tracking-wider text-accent mb-2">Küsi hinnapakkumist</p>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground text-balance">
+              Vajad usaldusväärset halduspartnerit?
+            </h2>
+            <p className="mt-3 text-muted-foreground">
+              Saada päring vormi kaudu või kirjuta meile aadressile{" "}
+              <span className="font-semibold text-foreground">info@haldusproff.ee</span>
+            </p>
+          </div>
+          <InlineContactForm />
+        </div>
+      </section>
     </Layout>
   );
 };
