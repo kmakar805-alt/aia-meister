@@ -4,6 +4,17 @@ import { Leaf, Snowflake, SprayCan, Wrench } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import PageHero from "@/components/shared/PageHero";
 import CTASection from "@/components/shared/CTASection";
+import imgMuru from "@/assets/services/muru-niitmine.jpg";
+import imgHekk from "@/assets/services/hekkide-loikus.jpg";
+import imgLehed from "@/assets/services/lehtede-riisumine.jpg";
+import imgAed from "@/assets/services/aiahooldus.jpg";
+import imgLumi from "@/assets/services/lumelukkamine.jpg";
+import imgKatus from "@/assets/services/katuse-lumi.jpg";
+import imgKodu from "@/assets/services/kodu-koristus.jpg";
+import imgTrepp from "@/assets/services/trepikoda.jpg";
+import imgEhitus from "@/assets/services/ehitusjarne.jpg";
+import imgSurve from "@/assets/services/survepesu.jpg";
+import imgRemont from "@/assets/services/remont.jpg";
 
 const categoryFilters = [
   { key: "all", label: "Kõik" },
@@ -19,10 +30,10 @@ const categories = [
     title: "Haljastus ja õuetööd",
     icon: Leaf,
     services: [
-      { name: "Muru niitmine ja trimmerdamine", desc: "Hoiame muru korras kogu hooaja vältel — regulaarne niitmine ja trimmerdustöö." },
-      { name: "Hekkide lõikus", desc: "Anname hekile korraliku vormi ja hoiame seda ilusat aastaringselt." },
-      { name: "Lehtede riisumine ja hoovi korrastus", desc: "Koristame lehed, oksad ja prahi, et hoov oleks puhas ja korras." },
-      { name: "Hooajaline aiahooldus", desc: "Kevadine ja sügisene aiahooldus — puhastus, väetamine ja ettevalmistus." },
+      { name: "Muru niitmine ja trimmerdamine", desc: "Hoiame muru korras kogu hooaja vältel — regulaarne niitmine ja trimmerdustöö.", img: imgMuru },
+      { name: "Hekkide lõikus", desc: "Anname hekile korraliku vormi ja hoiame seda ilusat aastaringselt.", img: imgHekk },
+      { name: "Lehtede riisumine ja hoovi korrastus", desc: "Koristame lehed, oksad ja prahi, et hoov oleks puhas ja korras.", img: imgLehed },
+      { name: "Hooajaline aiahooldus", desc: "Kevadine ja sügisene aiahooldus — puhastus, väetamine ja ettevalmistus.", img: imgAed },
     ],
   },
   {
@@ -30,8 +41,8 @@ const categories = [
     title: "Talveteenused",
     icon: Snowflake,
     services: [
-      { name: "Lumelükkamine ja libedusetõrje", desc: "Lükkame lund ja puistame libedusetõrjevahendit — teed ja parklad on turvalised." },
-      { name: "Katustelt lume eemaldus", desc: "Eemaldame katustelt ohtliku lume ja jääpurikad ohutuse tagamiseks." },
+      { name: "Lumelükkamine ja libedusetõrje", desc: "Lükkame lund ja puistame libedusetõrjevahendit — teed ja parklad on turvalised.", img: imgLumi },
+      { name: "Katustelt lume eemaldus", desc: "Eemaldame katustelt ohtliku lume ja jääpurikad ohutuse tagamiseks.", img: imgKatus },
     ],
   },
   {
@@ -39,10 +50,10 @@ const categories = [
     title: "Koristusteenused",
     icon: SprayCan,
     services: [
-      { name: "Kodu- ja kontorikoristus", desc: "Regulaarne ja ühekordne koristus kodudele ja kontoritele." },
-      { name: "Trepikodade koristus", desc: "Professionaalne trepikodade ja ühiskasutatavate pindade koristus." },
-      { name: "Ehitusjärgne koristus", desc: "Põhjalik puhastus pärast ehitus- või remonditöid." },
-      { name: "Survepesu", desc: "Terrasside, kivipindade ja fassaadide survepesu — nagu uus!" },
+      { name: "Kodu- ja kontorikoristus", desc: "Regulaarne ja ühekordne koristus kodudele ja kontoritele.", img: imgKodu },
+      { name: "Trepikodade koristus", desc: "Professionaalne trepikodade ja ühiskasutatavate pindade koristus.", img: imgTrepp },
+      { name: "Ehitusjärgne koristus", desc: "Põhjalik puhastus pärast ehitus- või remonditöid.", img: imgEhitus },
+      { name: "Survepesu", desc: "Terrasside, kivipindade ja fassaadide survepesu — nagu uus!", img: imgSurve },
     ],
   },
   {
@@ -50,7 +61,7 @@ const categories = [
     title: "Lisateenused",
     icon: Wrench,
     services: [
-      { name: "Väiksemad remondi- ja hooldustööd", desc: "Pisiremondi ja hooldus — aitame kiirelt ja mugavalt." },
+      { name: "Väiksemad remondi- ja hooldustööd", desc: "Pisiremondi ja hooldus — aitame kiirelt ja mugavalt.", img: imgRemont },
     ],
   },
 ];
@@ -111,10 +122,21 @@ const Services = () => {
                   {cat.services.map((s) => (
                     <div
                       key={s.name}
-                      className="bg-card rounded-2xl p-6 border border-border shadow-card hover:shadow-lg hover:border-primary/20 transition-all duration-300"
+                      className="group relative overflow-hidden rounded-2xl border border-border shadow-card hover:shadow-lg hover:border-primary/20 transition-all duration-300 min-h-[220px] flex flex-col justify-end"
                     >
-                      <h3 className="text-lg font-semibold text-foreground mb-2">{s.name}</h3>
-                      <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
+                      <img
+                        src={s.img}
+                        alt={s.name}
+                        loading="lazy"
+                        width={800}
+                        height={600}
+                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/95 via-primary-dark/70 to-primary-dark/20" />
+                      <div className="relative p-6 text-primary-foreground">
+                        <h3 className="text-lg font-semibold mb-2">{s.name}</h3>
+                        <p className="text-sm text-primary-foreground/85 leading-relaxed">{s.desc}</p>
+                      </div>
                     </div>
                   ))}
                 </div>
