@@ -1,4 +1,3 @@
-import { Info } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import PageHero from "@/components/shared/PageHero";
 import InlineContactForm from "@/components/shared/InlineContactForm";
@@ -31,34 +30,6 @@ const Pricing = () => {
         breadcrumbs={[{ name: "Avaleht", href: "/" }, { name: "Hinnad" }]}
       />
 
-      <section className="py-10">
-        <div className="container container-narrow">
-          <div className="bg-primary-light rounded-2xl p-6 flex items-start gap-3">
-            <Info className="w-5 h-5 text-primary mt-0.5 shrink-0" />
-            <div>
-              <h3 className="font-semibold text-foreground mb-1">Individuaalne hindamine</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                Kuna iga objekt on erinev, ei paku me fikseeritud hinnakirja. Allpool olevad hinnad on orienteeruvad ja sõltuvad konkreetsetest tingimustest. Küsi alati personaalset pakkumist!
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="section-padding bg-section-alt">
-        <div className="container">
-          <h2 className="text-2xl md:text-3xl font-bold text-foreground text-center mb-10">Hinda mõjutavad tegurid</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {factors.map((f) => (
-              <div key={f.title} className="bg-card rounded-xl p-5 border border-border">
-                <h3 className="font-semibold text-foreground mb-1.5">{f.title}</h3>
-                <p className="text-sm text-muted-foreground">{f.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className="section-padding">
         <div className="container container-narrow">
           <h2 className="text-2xl md:text-3xl font-bold text-foreground text-center mb-4">Orienteeruvad näidishinnad</h2>
@@ -82,6 +53,20 @@ const Pricing = () => {
       </section>
 
       <section className="section-padding">
+        <div className="container">
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground text-center mb-10">Hinda mõjutavad tegurid</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {factors.map((f) => (
+              <div key={f.title} className="bg-card rounded-xl p-5 border border-border">
+                <h3 className="font-semibold text-foreground mb-1.5">{f.title}</h3>
+                <p className="text-sm text-muted-foreground">{f.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-padding bg-section-alt">
         <div id="paringu-vorm" className="container container-narrow scroll-mt-24">
           <div className="text-center mb-8">
             <p className="text-sm font-semibold uppercase tracking-wider text-accent mb-2">Küsi hinnapakkumist</p>
