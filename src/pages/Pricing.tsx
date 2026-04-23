@@ -30,10 +30,10 @@ const Pricing = () => {
         breadcrumbs={[{ name: "Avaleht", href: "/" }, { name: "Hinnad" }]}
       />
 
-      <section className="pt-16 md:pt-20 pb-8 md:pb-10">
+      <section className="pt-10 md:pt-12 pb-4 md:pb-6">
         <div className="container container-narrow">
           <h2 className="text-2xl md:text-3xl font-bold text-foreground text-center mb-4">Orienteeruvad näidishinnad</h2>
-          <p className="text-center text-muted-foreground mb-8">Need hinnad on näitlikud ja võivad varieeruda. Allpool saad arvutada täpsema hinna.</p>
+          <p className="text-center text-muted-foreground mb-6">Need hinnad on näitlikud ja võivad varieeruda. Allpool saad arvutada täpsema hinna.</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {examples.map((e) => (
               <div key={e.title} className="bg-card rounded-2xl p-6 border border-border shadow-card text-center">
@@ -46,7 +46,7 @@ const Pricing = () => {
         </div>
       </section>
 
-      <section className="py-10 md:py-14 bg-section-alt">
+      <section className="py-6 md:py-8 bg-section-alt">
         <div className="container container-narrow">
           <PriceCalculator />
         </div>
