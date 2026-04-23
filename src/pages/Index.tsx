@@ -7,6 +7,10 @@ import heroImg from "@/assets/hero-property.jpg";
 import ba1 from "@/assets/ba-property-1.jpg";
 import ba2 from "@/assets/ba-property-2.jpg";
 import ba3 from "@/assets/ba-property-3.jpg";
+import catHaljastus from "@/assets/services/muru-niitmine.jpg";
+import catTalv from "@/assets/services/lumelukkamine.jpg";
+import catKoristus from "@/assets/services/kodu-koristus.jpg";
+import catLisa from "@/assets/services/remont.jpg";
 
 const trustBadges = [
   { icon: Clock, text: "Vastus samal päeval" },
@@ -15,10 +19,10 @@ const trustBadges = [
 ];
 
 const serviceCategories = [
-  { icon: Leaf, name: "Haljastus ja õuetööd", desc: "Muru niitmine, hekkide lõikus, lehtede riisumine ja hooajaline aiahooldus.", href: "/teenused" },
-  { icon: Snowflake, name: "Talveteenused", desc: "Lumelükkamine, libedusetõrje ja katustelt lume eemaldamine.", href: "/teenused" },
-  { icon: SprayCan, name: "Koristusteenused", desc: "Kodu-, kontori- ja trepikodade koristus ning ehitusjärgne puhastus.", href: "/teenused" },
-  { icon: Wrench, name: "Lisateenused", desc: "Survepesu, väiksemad remondi- ja hooldustööd.", href: "/teenused" },
+  { icon: Leaf, name: "Haljastus ja õuetööd", desc: "Muru niitmine, hekkide lõikus, lehtede riisumine ja hooajaline aiahooldus.", href: "/teenused#haljastus", img: catHaljastus },
+  { icon: Snowflake, name: "Talveteenused", desc: "Lumelükkamine, libedusetõrje ja katustelt lume eemaldamine.", href: "/teenused#talveteenused", img: catTalv },
+  { icon: SprayCan, name: "Koristusteenused", desc: "Kodu-, kontori- ja trepikodade koristus ning ehitusjärgne puhastus.", href: "/teenused#koristus", img: catKoristus },
+  { icon: Wrench, name: "Lisateenused", desc: "Survepesu, väiksemad remondi- ja hooldustööd.", href: "/teenused#lisa", img: catLisa },
 ];
 
 const benefits = [
@@ -98,16 +102,27 @@ const Index = () => {
               <Link
                 key={s.name}
                 to={s.href}
-                className="group bg-card rounded-2xl p-6 border border-border shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1"
+                className="group relative overflow-hidden rounded-2xl border border-border shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1 min-h-[260px] flex flex-col justify-end"
               >
-                <div className="w-12 h-12 rounded-xl bg-primary-light flex items-center justify-center mb-4 group-hover:bg-primary transition-colors">
-                  <s.icon className="w-5 h-5 text-primary group-hover:text-primary-foreground transition-colors" />
+                <img
+                  src={s.img}
+                  alt={s.name}
+                  loading="lazy"
+                  width={800}
+                  height={600}
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/95 via-primary-dark/70 to-primary-dark/10" />
+                <div className="relative p-6 text-primary-foreground">
+                  <div className="w-10 h-10 rounded-xl bg-primary-foreground/15 backdrop-blur-sm flex items-center justify-center mb-3">
+                    <s.icon className="w-5 h-5 text-primary-foreground" />
+                  </div>
+                  <h3 className="text-lg font-semibold mb-2">{s.name}</h3>
+                  <p className="text-sm text-primary-foreground/85 leading-relaxed">{s.desc}</p>
+                  <span className="inline-flex items-center gap-1 mt-3 text-sm font-medium text-accent group-hover:gap-2 transition-all">
+                    Vaata lähemalt <ArrowRight className="w-3.5 h-3.5" />
+                  </span>
                 </div>
-                <h3 className="text-lg font-semibold text-foreground mb-2">{s.name}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
-                <span className="inline-flex items-center gap-1 mt-4 text-sm font-medium text-primary group-hover:gap-2 transition-all">
-                  Vaata lähemalt <ArrowRight className="w-3.5 h-3.5" />
-                </span>
               </Link>
             ))}
           </div>
