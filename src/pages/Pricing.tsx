@@ -82,7 +82,7 @@ const Pricing = () => {
       </section>
 
       <section className="section-padding">
-        <div className="container container-narrow">
+        <div id="paringu-vorm" className="container container-narrow scroll-mt-24">
           <div className="text-center mb-8">
             <p className="text-sm font-semibold uppercase tracking-wider text-accent mb-2">Küsi hinnapakkumist</p>
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground text-balance">
