@@ -122,10 +122,21 @@ const Services = () => {
                   {cat.services.map((s) => (
                     <div
                       key={s.name}
-                      className="bg-card rounded-2xl p-6 border border-border shadow-card hover:shadow-lg hover:border-primary/20 transition-all duration-300"
+                      className="group relative overflow-hidden rounded-2xl border border-border shadow-card hover:shadow-lg hover:border-primary/20 transition-all duration-300 min-h-[220px] flex flex-col justify-end"
                     >
-                      <h3 className="text-lg font-semibold text-foreground mb-2">{s.name}</h3>
-                      <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
+                      <img
+                        src={s.img}
+                        alt={s.name}
+                        loading="lazy"
+                        width={800}
+                        height={600}
+                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/95 via-primary-dark/70 to-primary-dark/20" />
+                      <div className="relative p-6 text-primary-foreground">
+                        <h3 className="text-lg font-semibold mb-2">{s.name}</h3>
+                        <p className="text-sm text-primary-foreground/85 leading-relaxed">{s.desc}</p>
+                      </div>
                     </div>
                   ))}
                 </div>
