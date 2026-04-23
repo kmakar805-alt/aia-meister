@@ -7,6 +7,10 @@ import heroImg from "@/assets/hero-property.jpg";
 import ba1 from "@/assets/ba-property-1.jpg";
 import ba2 from "@/assets/ba-property-2.jpg";
 import ba3 from "@/assets/ba-property-3.jpg";
+import catHaljastus from "@/assets/services/muru-niitmine.jpg";
+import catTalv from "@/assets/services/lumelukkamine.jpg";
+import catKoristus from "@/assets/services/kodu-koristus.jpg";
+import catLisa from "@/assets/services/remont.jpg";
 
 const trustBadges = [
   { icon: Clock, text: "Vastus samal päeval" },
@@ -15,10 +19,10 @@ const trustBadges = [
 ];
 
 const serviceCategories = [
-  { icon: Leaf, name: "Haljastus ja õuetööd", desc: "Muru niitmine, hekkide lõikus, lehtede riisumine ja hooajaline aiahooldus.", href: "/teenused" },
-  { icon: Snowflake, name: "Talveteenused", desc: "Lumelükkamine, libedusetõrje ja katustelt lume eemaldamine.", href: "/teenused" },
-  { icon: SprayCan, name: "Koristusteenused", desc: "Kodu-, kontori- ja trepikodade koristus ning ehitusjärgne puhastus.", href: "/teenused" },
-  { icon: Wrench, name: "Lisateenused", desc: "Survepesu, väiksemad remondi- ja hooldustööd.", href: "/teenused" },
+  { icon: Leaf, name: "Haljastus ja õuetööd", desc: "Muru niitmine, hekkide lõikus, lehtede riisumine ja hooajaline aiahooldus.", href: "/teenused#haljastus", img: catHaljastus },
+  { icon: Snowflake, name: "Talveteenused", desc: "Lumelükkamine, libedusetõrje ja katustelt lume eemaldamine.", href: "/teenused#talveteenused", img: catTalv },
+  { icon: SprayCan, name: "Koristusteenused", desc: "Kodu-, kontori- ja trepikodade koristus ning ehitusjärgne puhastus.", href: "/teenused#koristus", img: catKoristus },
+  { icon: Wrench, name: "Lisateenused", desc: "Survepesu, väiksemad remondi- ja hooldustööd.", href: "/teenused#lisa", img: catLisa },
 ];
 
 const benefits = [
