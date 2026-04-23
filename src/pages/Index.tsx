@@ -56,7 +56,7 @@ const Index = () => {
           <img src={heroImg} alt="Kinnisvara haldus" width={1920} height={1080} className="w-full h-full object-cover opacity-20" />
           <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/95 to-primary/70" />
         </div>
-        <div className="relative container py-10 md:py-14 lg:py-16">
+        <div className="relative container py-14 md:py-20 lg:py-24">
           <div className="max-w-2xl">
             <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-primary-foreground leading-tight text-balance">
               Usaldusväärne haldus- ja koristusteenus
@@ -94,7 +94,7 @@ const Index = () => {
       </section>
 
       {/* Service categories */}
-      <section className="pt-6 md:pt-8 pb-16 md:pb-24">
+      <section className="pt-8 md:pt-10 pb-16 md:pb-24">
         <div className="container">
           <SectionHeading title="Meie teenused" subtitle="Pakume laia valiku haldus-, hooldus- ja koristusteenuseid nii eramajadele kui ärikinnisvarale." />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
