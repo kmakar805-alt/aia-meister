@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { Info } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import PageHero from "@/components/shared/PageHero";
