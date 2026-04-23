@@ -102,16 +102,27 @@ const Index = () => {
               <Link
                 key={s.name}
                 to={s.href}
-                className="group bg-card rounded-2xl p-6 border border-border shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1"
+                className="group relative overflow-hidden rounded-2xl border border-border shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1 min-h-[260px] flex flex-col justify-end"
               >
-                <div className="w-12 h-12 rounded-xl bg-primary-light flex items-center justify-center mb-4 group-hover:bg-primary transition-colors">
-                  <s.icon className="w-5 h-5 text-primary group-hover:text-primary-foreground transition-colors" />
+                <img
+                  src={s.img}
+                  alt={s.name}
+                  loading="lazy"
+                  width={800}
+                  height={600}
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/95 via-primary-dark/70 to-primary-dark/10" />
+                <div className="relative p-6 text-primary-foreground">
+                  <div className="w-10 h-10 rounded-xl bg-primary-foreground/15 backdrop-blur-sm flex items-center justify-center mb-3">
+                    <s.icon className="w-5 h-5 text-primary-foreground" />
+                  </div>
+                  <h3 className="text-lg font-semibold mb-2">{s.name}</h3>
+                  <p className="text-sm text-primary-foreground/85 leading-relaxed">{s.desc}</p>
+                  <span className="inline-flex items-center gap-1 mt-3 text-sm font-medium text-accent group-hover:gap-2 transition-all">
+                    Vaata lähemalt <ArrowRight className="w-3.5 h-3.5" />
+                  </span>
                 </div>
-                <h3 className="text-lg font-semibold text-foreground mb-2">{s.name}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
-                <span className="inline-flex items-center gap-1 mt-4 text-sm font-medium text-primary group-hover:gap-2 transition-all">
-                  Vaata lähemalt <ArrowRight className="w-3.5 h-3.5" />
-                </span>
               </Link>
             ))}
           </div>
